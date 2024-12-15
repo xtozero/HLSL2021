@@ -16,5 +16,5 @@ before_build:
 
     cmake ..
 build:
-  project: c:\ssr\build\hlsl2021.sln
+  project: c:\hlsl2021\build\hlsl2021.sln
   verbosity: minimal
