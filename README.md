@@ -1,6 +1,10 @@
 # HLSL 2021
 [![Build status](https://ci.appveyor.com/api/projects/status/ivtgkva8itpwdwcr?svg=true)](https://ci.appveyor.com/project/xtozero/hlsl2021)
+
 Sample project for learning HLSL2021 
+
+## Doc
+https://xtozero.tistory.com/18 (Korean)
 
 ## Prerequisite
 - Windows 10 or later

@@ -11,19 +11,17 @@ void increment(inout float3 X)
 }
 
 template<typename T, typename U>
-void partial(T X, U Y)
+struct Partial
 {
-    
-}
+    T first;
+    U second;
+};
 
-#if 0
-// Partial template specializations are not supported
 template<typename T>
-void partial(T X, int Y)
+struct Partial<T, int>
 {
-    
-}
-#endif
+    T first;
+};
 
 template<typename V, typename T>
 V cast(T X)
@@ -41,8 +39,14 @@ void main()
     increment(Y);
     increment(Z);
     
-    partial(X, Y);
-    partial(X, X);
+    Partial<float, float> P1;
+    P1.first = 0.f;
+    P1.second = 0.f;
+    
+    Partial<float, int> P2;
+    P2.first = 0.f;
+    // Because partial specialization is supported, uncommenting below will cause a compile error
+    // P2.second = 0;
 
     int I = 1;
     uint J = cast<uint>(I);
